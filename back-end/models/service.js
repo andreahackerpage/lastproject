@@ -1,4 +1,4 @@
-const Schema = require("mongoose").Schema;;
+const Schema = require("mongoose").Schema;
 const serviceSchema = new require("mongoose").Schema({
     type:{
         type:String
@@ -8,8 +8,9 @@ const serviceSchema = new require("mongoose").Schema({
         
     },
     Hour:{
-      type:Date,
-},
+      type:String,
+}
+},{
     timestamps:{
         createdAt:"created_at",
         updatedAt:"updated_at"
