@@ -1,5 +1,5 @@
 const Schema = require("mongoose").Schema;
-const profileSchema = new require("mongoose").Schema({
+const cleanerSchema = new require("mongoose").Schema({
     
     name:{
         type:String
@@ -27,4 +27,4 @@ const profileSchema = new require("mongoose").Schema({
   
 });
 
-module.exports = require("mongoose").model("Profile", profileSchema);
+module.exports = require("mongoose").model("Cleaner", cleanerSchema);
