@@ -7,6 +7,7 @@ const userSchema = new require("mongoose").Schema({
         type:String
     
     },
+    
     email:{
         type:String,
         required:true

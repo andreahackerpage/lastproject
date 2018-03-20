@@ -12,6 +12,7 @@ router.post('/signup', controller.signup);
 router.post('/login', passport.authenticate('local'), controller.login);
 router.post('/logout', controller.logout);
 router.get('/loggedin', controller.loggedin);
-//router.get('/users', checkIfLoggedin, controller.getUsers);
+router.get('/users', checkIfLoggedin, controller.getUsers);
+
 
 module.exports = router;

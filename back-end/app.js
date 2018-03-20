@@ -17,7 +17,12 @@ const auth =  require('./routes/auth');
 
 var app = express();
 
-
+const cors = require("cors");
+const corsOption={
+  credentials:true,
+  origin:true
+}
+app.use(cors(corsOption));
 // Mongoose configuration
 const mongoose = require("mongoose");
 mongoose.connect("mongodb://andrea:123@ds215019.mlab.com:15019/ironclean");
@@ -49,7 +54,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/api/users', users);
-app.use('/api/services', services);
+app.use('/api/orders', services);
 app.use('/api/cleaners', cleaners);
 app.use('/api/auth', auth);
 
