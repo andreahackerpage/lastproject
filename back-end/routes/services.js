@@ -6,9 +6,9 @@ const controller = require("../controllers/services.controller");
 /* GET users listing. */
 router.get('/', controller.getServices);
 router.post('/', controller.postServices);
-router.get('/:id', controller.getService);
-router.patch('/:id', controller.patchList);
-router.delete('/:id', controller.deleteList);
+router.get('/:id', controller.getSingleService);
+router.patch('/:id', controller.patchOrder);
+//router.delete('/:id', controller.deleteService);
 //update
 module.exports = router;
 

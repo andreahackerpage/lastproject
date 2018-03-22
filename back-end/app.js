@@ -15,6 +15,7 @@ var services = require ('./routes/services');
 var cleaners = require ('./routes/cleaners');
 const auth =  require('./routes/auth');
 
+
 var app = express();
 
 const cors = require("cors");
@@ -57,6 +58,7 @@ app.use('/api/users', users);
 app.use('/api/orders', services);
 app.use('/api/cleaners', cleaners);
 app.use('/api/auth', auth);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

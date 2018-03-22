@@ -6,20 +6,19 @@ const cleanerSchema = new require("mongoose").Schema({
     },
     lastname:{
         type:String,
-        required:true
-    },
-  
-    avatar:{
-      type:String,
-      default: "http://hqhomeopatia.com/escuela/wp-content/uploads/2017/02/avatar.png"
+        
     },
     email:{
       type:String,
-      required:true
+     
+    },
+    avatar:{
+        type: Array,
+        default:[]
     },
     address:{
       type:String,
-      required:true
+    
     },
     password:{
         type:String

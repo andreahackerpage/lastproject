@@ -8,9 +8,10 @@ exports.deleteCleaner = (req,res,next)=>{
   .catch(e=>res.status(500).send(e));
 }
 
-exports.patchCleaner = (req,res,next)=>{
-  List.findByIdAndUpdate(req.params.id, req.body, {new:true})
-  .then(list=>res.status(200).json(list))
+exports.patchOrder = (req,res,next)=>{
+  Service.findByIdAndUpdate(req.params.id, req.body, {new:true})
+  .populate('cleaner')
+  .then(order=>res.status(200).json(order))
   .catch(e=>res.status(500).send(e));
 }
 
@@ -26,7 +27,10 @@ const newService = new Service({
   name: req.body.name,
   price: req.body.price,
   hour: req.body.hour,
-  address:req.body.address
+  address:req.body.address,
+  rooms: req.body.rooms,
+  services: req.body.services,
+  date: req.body.date
 
 });
 
@@ -38,7 +42,7 @@ newService.save()
 
 }
 
-exports.getService= function(req, res, next) {
+exports.getSingleService= function(req, res, next) {
   Service.findById(req.params.id)
   .then(service=>res.status(200).json(service))
   .catch(e=>res.status(500).send(e));

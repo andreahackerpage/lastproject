@@ -1,8 +1,8 @@
 const Schema = require("mongoose").Schema;  
 const PassportLocalMongoose = require ("passport-local-mongoose");
-const userSchema = new require("mongoose").Schema({
 
-    
+
+const userSchema = new require("mongoose").Schema({
     name:{
         type:String
     
@@ -15,10 +15,11 @@ const userSchema = new require("mongoose").Schema({
     address:{
       type:String
       },
-    password:{
+    role:{
         type:String,
-        required: true
-},
+        enum:['CLEANER', 'USER', 'ADMIN'],
+        default:'USER'
+    },
 orders:[{
     type: Schema.Types.ObjectId,
     ref:"Service"

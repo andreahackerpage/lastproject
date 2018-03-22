@@ -1,15 +1,22 @@
 const Schema = require("mongoose").Schema;
 const orderSchema = new require("mongoose").Schema({
-    service:{
+    cleaner:{
+        type:Schema.Types.ObjectId,
+        ref:"Cleaner"
+    },
+    services:{
         type:String
     },
-    rooms:Number,
+    rooms: Number,
     price:{
         type:Number
         
     },
     hour:{
       type:String
+},
+date:{
+    type:String
 },
     address:{
         type:String

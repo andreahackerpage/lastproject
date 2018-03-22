@@ -10,10 +10,10 @@ exports.postCleaners = (req, res, next)=>{
 const newCleaner = new Cleaner({
   name: req.body.name,
   lastname: req.body.lastname,
-  avatar: req.body.avatar,
   email: req.body.email,
   address: req.body.address,
-  password: req.body.password
+  password: req.body.password,
+ 
 });
 
 newCleaner.save()
